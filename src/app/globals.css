@@ -36,7 +36,7 @@ body {
 }
 
 .get-resume-button {
-  @apply text-xl mt-2 transition-all ease-in rounded-lg hover:rounded-2xl text-cyan-500 bg-transparent cursor-pointer border-2 border-cyan-500 px-4 py-2 w-2xs
+  @apply text-xl text-center mt-2 transition-all ease-in rounded-lg hover:rounded-2xl text-cyan-500 bg-transparent cursor-pointer border-2 border-cyan-500 px-4 py-2 w-2xs
 }
 
 .icon-hover {
