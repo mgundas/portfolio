@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800&display=swap');@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css'); 
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -26,5 +28,17 @@ body {
 }
 
 .hero-circle {
-  @apply z-[-1] absolute top-[80%] bg-pink-400 blur-[10rem] h-[15rem] w-[25rem] left-[-10%] translate-[-50%] rounded-[50%]
+  @apply z-[-1] absolute top-[80%] bg-lime-400 blur-[10rem] h-[15rem] w-[25rem] left-[-10%] translate-[-50%] rounded-[50%]
+}
+
+.hero-container {
+  @apply flex gap-4 items-center justify-between p-15 z-10 flex-wrap
+}
+
+.get-resume-button {
+  @apply text-xl mt-2 transition-all ease-in hover:rounded-2xl text-cyan-500 bg-transparent cursor-pointer border-2 border-cyan-500 px-4 py-2 w-2xs
+}
+
+.icon-hover {
+  @apply leading-[.5]! transition-shadow ease-linear hover:shadow-[0px_0px_15px_rgba(255,255,255,0.8)]
 }
