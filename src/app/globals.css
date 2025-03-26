@@ -43,6 +43,14 @@ body {
   @apply leading-[.5]! transition-shadow ease-linear hover:shadow-[0px_0px_15px_rgba(255,255,255,0.8)]
 }
 
+.icon {
+  @apply leading-[.5]! transition-shadow ease-linear
+}
+
 .sm_md_text {
   @apply text-right sm:text-left
+}
+
+.sidebar-link {
+  @apply rounded-lg text-xl p-2 px-4 hover:[&>i]:shadow-[0px_0px_15px_rgba(255,255,255,0.8)]
 }
