@@ -23,7 +23,7 @@ const Hero = () => {
           </a>
         </div>
         <div className="flex-1/4 p-5 flex items-center justify-center relative">
-          <div className="relative mt-10 sm:mt-5 m-5 flex items-center justify-center">
+          <div className="relative mt-10 m-5 ml-0 flex items-center justify-center">
             <div className="-rotate-10 border-3 border-cyan-400 bg-[#171717] relative overflow-hidden">
               <img
                 src={db.profile.image}
