@@ -1,11 +1,13 @@
+import db from "@/database/database";
+
 const MiniNavbar = () => {
     return (
         <div className="hidden fixed bottom-0 left-3 sm:grid grid-cols-1 gap-2">
-            <ul className="flex flex-col items-center justify-center">
-                <li className="rounded-lg p-2 text-2xl bg-transparent"><i className="fa-regular fa-envelope icon-hover"></i></li>
-                <li className="rounded-lg p-2 text-2xl"><i className="fa-brands fa-linkedin icon-hover"></i></li>
-                <li className="rounded-lg p-2 text-2xl"><i className="fa-brands fa-github icon-hover"></i></li>
-            </ul>
+            <div className="flex flex-col items-center justify-center">
+                <a href={db.socials.email} target="blank" className="rounded-lg p-2 text-2xl bg-transparent"><i className="fa-regular fa-envelope icon-hover"></i></a>
+                <a href={db.socials.linkedin} target="blank" className="rounded-lg p-2 text-2xl"><i className="fa-brands fa-linkedin icon-hover"></i></a>
+                <a href={db.socials.github} target="blank" className="rounded-lg p-2 text-2xl"><i className="fa-brands fa-github icon-hover"></i></a>
+            </div>
             <div className="h-24 w-1 rounded-t-lg bg-white mx-auto"></div>
         </div>
     );
