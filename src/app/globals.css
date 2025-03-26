@@ -42,3 +42,7 @@ body {
 .icon-hover {
   @apply leading-[.5]! transition-shadow ease-linear hover:shadow-[0px_0px_15px_rgba(255,255,255,0.8)]
 }
+
+.sm_md_text {
+  @apply text-right sm:text-left
+}
