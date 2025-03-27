@@ -14,9 +14,9 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sticky sm:relative top-0 z-50 h-16 flex items-center justify-between p-10 bg-gradient-to-b from-[#171717] from-20% to-[#00000000]">
+      <div className="sticky sm:relative top-0 z-50 h-16 flex items-center justify-between p-5 bg-gradient-to-b from-[#171717] from-20% to-[#00000000]">
         <h1 className="text-white text-2xl ml-4">{db.profile.name}</h1>
-        <ul className="gap-4 text-xl items-center hidden sm:flex">
+        <ul className="gap-4 text-xl items-center hidden lg:flex">
           <li className="inline-block text-white mr-4">About</li>
           <li className="inline-block text-white mr-4">Skills</li>
           <li className="inline-block text-white mr-4">Projects</li>
@@ -26,17 +26,17 @@ const Navbar = () => {
         <button
           ref={buttonRef}
           onClick={handleClick}
-          className="flex items-center justify-center p-4 sm:hidden cursor-pointer"
+          className="flex items-center justify-center p-4 lg:hidden cursor-pointer"
         >
           <i className="fa-solid fa-bars"></i>
         </button>
       </div>
       <div
         ref={menuRef}
-        className="h-dvh w-3/5 transition-transform translate-x-full bg-black/20 border-l-2 border-black/30 backdrop-blur-sm fixed z-52 top-0 right-0"
+        className="h-dvh w-3/5 md:w-2/5 transition-transform translate-x-full bg-black/20 border-l-2 border-black/30 backdrop-blur-sm fixed z-52 top-0 right-0"
       >
         <div className="flex flex-col justify-center gap-2 py-5">
-          <h3 className="text-xl p-2 px-4 border-t-1 border-b-1 border-black/30">Social Links</h3>
+          <h3 className="text-xl p-2 px-4 border-y-2 border-black/30">Social Links</h3>
           <a
             href={db.socials.email}
             target="blank"

@@ -32,7 +32,7 @@ body {
 }
 
 .hero-container {
-  @apply flex gap-4 items-center justify-between p-15 z-10 flex-wrap
+  @apply flex gap-4 items-center justify-between p-10 pr-15 z-10 flex-wrap
 }
 
 .get-resume-button {
