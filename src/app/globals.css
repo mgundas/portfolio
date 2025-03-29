@@ -32,7 +32,7 @@ body {
 }
 
 .hero-container {
-  @apply flex gap-4 items-center justify-between p-10 pr-15 z-10 flex-wrap
+  @apply flex gap-4 items-center justify-between p-10 lg:p-15 pr-15 z-10 flex-wrap
 }
 
 .get-resume-button {
@@ -53,4 +53,8 @@ body {
 
 .sidebar-link {
   @apply rounded-lg text-xl p-2 px-4 hover:[&>i]:shadow-[0px_0px_15px_rgba(255,255,255,0.8)]
+}
+
+.skill-style {
+  @apply flex items-center justify-center gap-2 py-2 px-4 text-2xl font-light text-lime-300 bg-black/20 border-2 border-lime-900 rounded-lg transition-all duration-200 ease-in-out cursor-default hover:scale-105 hover:bg-lime-900/20 hover:border-lime-300
 }
