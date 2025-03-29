@@ -1,6 +1,9 @@
 "use client";
 import { useRef } from "react";
 import db from "../../database/database";
+import SocialButton from "./buttons/SocialButton";
+import NavbarLink from "./buttons/NavbarLink";
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -16,13 +19,13 @@ const Navbar = () => {
     <>
       <div className="sticky sm:relative top-0 z-50 h-16 flex items-center justify-between p-5 bg-gradient-to-b from-[#171717] from-20% to-[#00000000]">
         <h1 className="text-white text-2xl ml-4">{db.profile.name}</h1>
-        <ul className="gap-4 text-xl items-center hidden lg:flex">
-          <li className="inline-block text-white mr-4">About</li>
-          <li className="inline-block text-white mr-4">Skills</li>
-          <li className="inline-block text-white mr-4">Projects</li>
-          <li className="inline-block text-white mr-4">Contact</li>
-          <li className="inline-block text-white mr-4">Resume</li>
-        </ul>
+        <div className="gap-4 text-xl items-center hidden lg:flex">
+          <NavbarLink href="footer">About</NavbarLink>
+          <NavbarLink href="skills">Skills</NavbarLink>
+          <NavbarLink href="projects">Projects</NavbarLink>
+          <NavbarLink href="contact">Contact</NavbarLink>
+          <NavbarLink href="resume">Resume</NavbarLink>
+        </div>
         <button
           ref={buttonRef}
           onClick={handleClick}
@@ -37,27 +40,9 @@ const Navbar = () => {
       >
         <div className="flex flex-col justify-center gap-2 py-5">
           <h3 className="text-xl p-2 px-4 border-y-2 border-black/30">Social Links</h3>
-          <a
-            href={db.socials.email}
-            target="blank"
-            className="sidebar-link"
-          >
-            <i className="fa-regular fa-envelope icon"></i>&nbsp;&nbsp;Email
-          </a>
-          <a
-            href={db.socials.linkedin}
-            target="blank"
-            className="sidebar-link"
-          >
-            <i className="fa-brands fa-linkedin icon"></i>&nbsp;&nbsp;LinkedIn
-          </a>
-          <a
-            href={db.socials.github}
-            target="blank"
-            className="sidebar-link"
-          >
-            <i className="fa-brands fa-github icon"></i>&nbsp;&nbsp;GitHub
-          </a>
+          <SocialButton href={db.socials.email} icon="fa-envelope">Email</SocialButton>
+          <SocialButton href={db.socials.linkedin} icon="fa-linkedin">LinkedIn</SocialButton>
+          <SocialButton href={db.socials.github} icon="fa-github">GitHub</SocialButton>
         </div>
       </div>
       <div
