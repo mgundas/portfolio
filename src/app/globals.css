@@ -28,7 +28,11 @@ body {
 }
 
 .hero-circle {
-  @apply z-[-1] absolute bottom-[28%] bg-lime-400 blur-[10rem] h-[15rem] w-[25rem] left-[-10%] translate-[-50%] rounded-[50%]
+  @apply z-[-1] absolute bottom-0 bg-lime-400 blur-[10rem] h-[15rem] w-[25rem] left-[-10%] translate-[-50%] rounded-[50%]
+}
+
+.hero-circle-reverse {
+  @apply z-[-1] absolute top-0 blur-[10rem] h-[15rem] w-[25rem] right-[-45%] translate-[10%] rounded-[50%]
 }
 
 .hero-container {

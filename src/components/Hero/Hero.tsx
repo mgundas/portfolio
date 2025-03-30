@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className="relative">
       <div className="hero-container">
-        <div className="flex-2/4 grid gap-2 text-xl sm:text-2xl">
+        <div className="flex-2/4 grid gap-2 text-2xl">
           <h1 className="text-indigo-300 font-light">
             Hello! I am
           </h1>
