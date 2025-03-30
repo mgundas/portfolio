@@ -1,20 +1,16 @@
+"use client";
 import db from "../../database/database";
+import { Link } from 'react-scroll';
 
 const Hero = () => {
   return (
-    <div className="relative">
+    <div className="relative lg:h-screen">
       <div className="hero-container">
         <div className="flex-2/4 grid gap-2 text-2xl">
-          <h1 className="text-indigo-300 font-light">
-            Hello! I am
-          </h1>
+          <h1 className="text-indigo-300 font-light">Hello! I am</h1>
           <h1 className="font-medium">{db.profile.name}</h1>
-          <p className="text-cyan-400 font-light">
-            {db.profile.title}
-          </p>
-          <p className="font-light">
-            {db.profile.description}
-          </p>
+          <p className="text-cyan-400 font-light">{db.profile.title}</p>
+          <p className="font-light">{db.profile.description}</p>
           <a
             href="/resume.pdf"
             className="get-resume-button justify-self-center sm:justify-self-auto"
@@ -37,6 +33,9 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-circle"></div>
+      <Link to="about" smooth={true} duration={500} className="absolute hidden lg:flex items-center justify-center w-full bottom-[15%] cursor-pointer">
+        <i className="fa-solid fa-mouse text-3xl text-cyan-400"></i>
+      </Link>
     </div>
   );
 };

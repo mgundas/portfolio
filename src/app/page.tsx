@@ -1,3 +1,4 @@
+import About from "@/components/About/About";
 import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/Hero/Hero";
 import MiniNavbar from "@/components/Navbar/MiniNavbar";
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <MiniNavbar />
+      <About />
       <Skills />
       <Footer />
     </>

@@ -9,15 +9,13 @@ const Skills = () => {
       <h1 className="text-4xl font-light text-gray mb-10 lg:mb-5 text-center">
         Skills
       </h1>
-      <div className="">
-        {db.skills.categories.map((category, categoryIndex) => (
-          <Category key={categoryIndex} name={category.name}>
-            {category.skills.map((skill, skillIndex) => (
-              <Skill name={skill.name} icon={skill.icon} key={skillIndex} />
-            ))}
-          </Category>
-        ))}
-      </div>
+      {db.skills.categories.map((category, categoryIndex) => (
+        <Category key={categoryIndex} name={category.name}>
+          {category.skills.map((skill, skillIndex) => (
+            <Skill name={skill.name} icon={skill.icon} key={skillIndex} />
+          ))}
+        </Category>
+      ))}
       <div className="hero-circle bg-cyan-400! z-1"></div>
     </div>
   );
