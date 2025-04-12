@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="max-w-[1920px] mx-auto overflow-clip py-0 px-16 lg:px-32">
+        <main className="max-w-[1920px] mx-auto overflow-clip py-0 px-12 lg:px-32">
           {children}
         </main>
       </body>

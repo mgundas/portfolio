@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sticky w-screen -ml-16 px-16 sm:-ml-0 sm:px-0 sm:w-auto sm:relative top-0 left-0 z-50 h-16 flex items-center justify-between bg-gradient-to-b from-[#171717] from-20% to-[#00000000]">
+      <div className="sticky w-screen -ml-12 px-12 sm:-ml-0 sm:px-0 sm:w-auto sm:relative top-0 left-0 z-50 h-16 flex items-center justify-between bg-gradient-to-b from-[#171717] from-20% to-[#00000000]">
         <h1 className="text-white text-2xl">{db.profile.name}</h1>
         <div className="gap-4 text-xl items-center hidden lg:flex">
           <NavbarLink href="skills">Skills</NavbarLink>
