@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import db from "../../database/database";
 import Category from "./subComponents/Category";
@@ -5,7 +6,7 @@ import Skill from "./subComponents/Skill";
 
 const Skills = () => {
   return (
-    <div id="skills" className="p-10 lg:p-18 pr-15 relative z-2">
+    <div id="skills" className="relative z-2">
       <h1 className="text-4xl font-light text-gray mb-10 lg:mb-5 text-center">
         Skills
       </h1>
@@ -16,8 +17,9 @@ const Skills = () => {
           ))}
         </Category>
       ))}
-      <div className="hero-circle bg-cyan-400! z-1"></div>
-    </div>
+      <div className="bgr-circle bgr-circle-tr bg-lime-400/60"></div>
+      <div className="bgr-circle bgr-circle-bl bg-cyan-400/60"></div>
+      </div>
   );
 };
 

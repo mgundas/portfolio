@@ -3,23 +3,21 @@ import { useRef } from "react";
 import db from "../../database/database";
 import SocialButton from "./buttons/SocialButton";
 import NavbarLink from "./buttons/NavbarLink";
-import { Link } from 'react-scroll';
 
 const Navbar = () => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   
   const handleClick = () => {
     menuRef.current?.classList.toggle("translate-x-full");
     overlayRef.current?.classList.toggle("hidden");
-    document.body.classList.toggle("overflow-hidden")
+    // document.body.classList.toggle("overflow-hidden")
   };
 
   return (
     <>
-      <div className="sticky sm:relative top-0 z-50 h-16 flex items-center justify-between p-5 lg:p-10 bg-gradient-to-b from-[#171717] from-20% to-[#00000000]">
-        <h1 className="text-white text-2xl ml-4">{db.profile.name}</h1>
+      <div className="sticky w-screen -ml-16 px-16 sm:-ml-0 sm:px-0 sm:w-auto sm:relative top-0 left-0 z-50 h-16 flex items-center justify-between bg-gradient-to-b from-[#171717] from-20% to-[#00000000]">
+        <h1 className="text-white text-2xl">{db.profile.name}</h1>
         <div className="gap-4 text-xl items-center hidden lg:flex">
           <NavbarLink href="skills">Skills</NavbarLink>
           <NavbarLink href="projects">Projects</NavbarLink>
@@ -27,7 +25,6 @@ const Navbar = () => {
           <NavbarLink href="resume">Resume</NavbarLink>
         </div>
         <button
-          ref={buttonRef}
           onClick={handleClick}
           className="flex items-center justify-center p-4 lg:hidden cursor-pointer"
         >

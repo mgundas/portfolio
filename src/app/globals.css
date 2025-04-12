@@ -27,16 +27,8 @@ body {
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
-.hero-circle {
-  @apply z-[-1] absolute bottom-0 bg-lime-400 blur-[10rem] h-[15rem] w-[25rem] left-[-10%] translate-[-50%] rounded-[50%]
-}
-
-.hero-circle-reverse {
-  @apply z-[-1] absolute top-0 blur-[10rem] h-[15rem] w-[25rem] right-[-45%] translate-[10%] rounded-[50%]
-}
-
 .hero-container {
-  @apply flex gap-4 items-center justify-between p-10 lg:p-15 pr-15 z-10 flex-wrap
+  @apply flex gap-4 items-center justify-between z-10 flex-wrap xl:h-screen
 }
 
 .get-resume-button {
@@ -61,4 +53,24 @@ body {
 
 .skill-style {
   @apply flex items-center justify-center gap-2 py-2 px-4 text-2xl font-light text-lime-300 bg-black/20 border-2 border-lime-900 rounded-lg transition-all duration-200 ease-in-out cursor-default hover:scale-105 hover:bg-lime-900/20 hover:border-lime-300
+}
+
+.bgr-circle {
+  @apply -z-1 blur-[8rem] w-[25rem] h-[25rem] absolute rounded-[50%]
+}
+
+.bgr-circle-bl {
+  @apply -left-70/100 md:-left-22/100 -bottom-12/100
+}
+
+.bgr-circle-br {
+  @apply -right-70/100 md:-right-22/100 -bottom-12/100
+}
+
+.bgr-circle-tr {
+  @apply -right-70/100 md:-right-22/100 -top-12/100
+}
+
+.bgr-circle-tl {
+  @apply -left-70/100 md:-left-22/100 -top-12/100
 }
