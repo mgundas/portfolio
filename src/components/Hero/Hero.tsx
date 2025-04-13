@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import db from "../../database/database";
 import { Link } from 'react-scroll';
 
@@ -21,11 +22,7 @@ const Hero = () => {
         <div className="flex-1/4 p-5 flex items-center my-10 md:my-0 justify-center relative">
           <div className="relative ml-0 flex items-center justify-center">
             <div className="-rotate-10 border-3 border-cyan-400 bg-[#171717] relative overflow-hidden">
-              <img
-                src={db.profile.image}
-                alt={db.profile.name}
-                className="rotate-10 opacity-0"
-              />
+              <Image src={db.profile.image} alt={db.profile.name} className=""  width={450} height={450} />
             </div>
             <div className="absolute h-full w-full bg-cyan-400 -rotate-10 translate-x-5 translate-y-4 -z-2"></div>
             <div className="absolute blur-[6rem] opacity-30 h-full w-full bg-cyan-400 -rotate-10 translate-x-3 translate-y-2 -z-2"></div>
