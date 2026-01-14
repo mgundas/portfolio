@@ -9,7 +9,7 @@ const db = {
   socials: {
     linkedin: "https://www.linkedin.com/in/mehmet-gundas/",
     github: "https://github.com/mgundas",
-    email: "mailto:meh.gundas@gmail.com",
+    email: "mailto:mehmet@mehmetgundas.dev",
   },
   skills: {
     categories: [

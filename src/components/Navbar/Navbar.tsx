@@ -22,7 +22,7 @@ const Navbar = () => {
           <NavbarLink href="skills">Skills</NavbarLink>
           <NavbarLink href="projects">Projects</NavbarLink>
           <NavbarLink href="contact">Contact</NavbarLink>
-          <NavbarLink href="resume">Resume</NavbarLink>
+          <a className='inline-block text-white mr-4' href="/resume.pdf">Resume</a>
         </div>
         <button
           onClick={handleClick}
