@@ -73,6 +73,7 @@ export type Content = {
       description: string;
       features: string[];
       stack: string[];
+      links?: { label: string; url: string }[];
     }[];
   };
   skills: {

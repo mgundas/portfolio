@@ -45,7 +45,7 @@ const Projects = ({ t }: { t: Content["work"] }) => (
                   </ul>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="grid gap-6">
                   <ul className="flex flex-wrap gap-2">
                     {project.stack.map((tech) => (
                       <li key={tech} className="rounded-full border border-line px-3 py-1 font-mono text-[11px] text-muted">
@@ -53,14 +53,27 @@ const Projects = ({ t }: { t: Content["work"] }) => (
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    className="group/link inline-flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-ink transition-all hover:gap-3 hover:bg-[#ffc57a]"
-                  >
-                    {t.visit}
-                    <ArrowUpRight className="transition-transform group-hover/link:rotate-45" />
-                  </a>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      className="group/link inline-flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-ink transition-all hover:gap-3 hover:bg-[#ffc57a]"
+                    >
+                      {t.visit}
+                      <ArrowUpRight className="transition-transform group-hover/link:rotate-45" />
+                    </a>
+                    {project.links?.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        className="group/sec inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-muted transition-colors hover:border-white/25 hover:text-fg"
+                      >
+                        {link.label}
+                        <ArrowUpRight className="transition-transform group-hover/sec:rotate-45" />
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
 
