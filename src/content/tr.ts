@@ -1,0 +1,266 @@
+import { certificateLinks } from "@/data/profile";
+import type { Content } from "./types";
+
+const tr: Content = {
+  meta: {
+    title: "Mehmet Gündaş · Platform Mühendisi",
+    description:
+      "Öğretmenlikten mühendisliğe. Mehmet Gündaş, Ankara'dan CRM platformları, pazarlama otomasyonları ve full-stack web uygulamaları geliştiriyor.",
+  },
+  nav: {
+    sections: { about: "Hakkımda", experience: "Deneyim", work: "İşler", skills: "Yetenekler", contact: "İletişim" },
+    backToTop: "Başa dön",
+    menu: "Menü",
+    openMenu: "Komut menüsünü aç",
+    switchLanguage: "Switch to English",
+  },
+  command: {
+    placeholder: "Bir komut yazın veya arayın…",
+    noResults: "Sonuç bulunamadı:",
+    groups: { navigate: "Gezin", actions: "İşlemler", elsewhere: "Diğer", language: "Dil" },
+    copyEmail: "E-posta adresini kopyala",
+    sendEmail: "E-posta gönder",
+    openResume: "Özgeçmişi aç (EN)",
+    switchTo: "Switch to English",
+    copied: "E-posta panoya kopyalandı",
+    hints: "↑↓ gezin · ↵ seç",
+  },
+  hero: {
+    role: "GHL Platform Mühendisi",
+    company: "Nevsah Institute",
+    currently: "Şu anda",
+    at: "·",
+    buildPrefix: "",
+    buildSuffix: "geliştiriyorum",
+    rotating: [
+      "CRM platformları",
+      "pazarlama otomasyonları",
+      "full-stack web uygulamaları",
+      "satış süreçleri",
+      "dönüşüm odaklı sayfalar",
+    ],
+    intro:
+      "Öğretmenlikten mühendisliğe geçtim, Ankara'da yaşıyorum. İşletmelerin daha çok satmasına, büyümesine ve içleri rahat çalışmasına yardım eden, sessizce işini yapan sistemler kuruyorum.",
+    talk: "Konuşalım",
+    resume: "Özgeçmiş",
+    scroll: "Kaydır",
+    portraitAlt: "Mehmet Gündaş'ın portresi",
+    city: "Ankara",
+    badgeFrom: "Öğretmen",
+    badgeTo: "Mühendis",
+  },
+  marquee: [
+    "GoHighLevel",
+    "Next.js",
+    "TypeScript",
+    "Yapay Zekâ İş Akışları",
+    "Otomasyon",
+    "Node.js",
+    "CRM Mimarisi",
+    "React",
+    "Twilio",
+    "MongoDB",
+    "Satış Hunileri",
+    "Docker",
+    "Make",
+    "n8n",
+  ],
+  about: {
+    eyebrow: "Hakkımda",
+    title: "Koda giden *uzun* yol.",
+    manifesto:
+      "Dillerin nasıl işlediğini okudum: fonoloji, sözdizimi, her cümlenin ardındaki gizli yapı. Sonra *grameri çok daha katı* bir dil keşfettim. Şimdi ikisini birlikte kullanarak *insanların gerçekten anladığı sistemler* kuruyorum.",
+    story: [
+      {
+        label: "Geçmiş",
+        title: "Oyun modları ve İngilizce dersleri",
+        body: "Çocukken bilgisayarlarla uğraşır, oynadığım oyunlara modlar yapardım. Programlama merakım orada başladı. Sonra dilbilim üzerine uzmanlaşarak İngilizce Öğretmenliği bölümünü bitirdim ve Eskişehir'de lisede İngilizce öğretmenliği yaptım.",
+      },
+      {
+        label: "Bugün",
+        title: "Büyüme platformları kuruyorum",
+        body: "GHL Platform Mühendisi olarak CRM çözümleri, ödeme entegrasyonları, satış hunileri ve pazarlama otomasyonları geliştirip yönetiyorum. Hedefim, bir potansiyel müşterinin gelişinden satışın kapanmasına kadar hiçbir sürtünme olmaması.",
+      },
+      {
+        label: "Gelecek",
+        title: "Fark yaratan yazılımlar",
+        body: "Geliştirici olarak büyümeye devam etmek, full-stack mühendislikte derinleşmek, açık kaynağa katkı vermek ve insanların hayatında gerçek bir fark yaratan yazılımlar üretmek istiyorum.",
+      },
+    ],
+    stats: [
+      { value: "2024", label: "Teknolojide üretmeye başladığım yıl" },
+      { value: "4", label: "Rol, sınıftan CRM'e" },
+      { value: "2", label: "Anadolu Üniversitesi diploması" },
+      { value: "6", label: "Sertifika, Meta ve LinkedIn dahil" },
+    ],
+  },
+  experience: {
+    eyebrow: "Deneyim",
+    title: "İz bıraktığım *yerler*.",
+    aside:
+      "Ders planlarından ödeme altyapılarına. Her rol bana karmaşık şeyleri, onları kullanan insanlar için basit hale getirmeyi öğretti.",
+    at: "·",
+    jobs: [
+      {
+        period: "Eki 2025 — Günümüz",
+        role: "GHL Platform Mühendisi",
+        company: "Nevsah Institute",
+        location: "Uzaktan",
+        points: [
+          "GoHighLevel ortamının yönetimini üstleniyorum: CRM yapılandırması, affiliate platform yönetimi ve ödeme altyapısı entegrasyonu.",
+          "Dönüşüm odaklı açılış sayfaları ve gelişmiş e-posta pazarlama otomasyonları tasarlayıp yayına alıyorum.",
+          "Satış süreçlerini optimize ediyor, satış ekibine anlık teknik destek vererek satış kapanırken hiçbir kesinti yaşanmamasını sağlıyorum.",
+          "Kampanyalar ve marka bilinirliği için sosyal medya görselleri hazırlıyorum.",
+        ],
+        tags: ["GoHighLevel", "CRM", "Ödemeler", "Otomasyon", "Satış Hunileri"],
+      },
+      {
+        period: "Oca 2025 — Eki 2025",
+        role: "Proje Yöneticisi",
+        company: "RTA Marketing Inc. & In30 Media",
+        location: "Uzaktan",
+        points: [
+          "Proje Yöneticiliğine terfi ettim. Uyum, hesap verebilirlik ve verimliliği artırmak için EOS'u tüm organizasyonda hayata geçirdim.",
+          "ClickUp panoları kurdum, Level 10 toplantılarını yönettim, bir SOP sistemi oluşturdum ve iş yükü dağılımını düzenledim.",
+          "In30 Media'da potansiyel müşteri bulmak için özel veri kazıma (scraping) scriptleri yazdım, verileri analiz ederek yüksek değerli adayları belirledim.",
+          "Erişimi, teslim edilebilirliği ve etkileşimi artırmak için Instantly.ai üzerinde yeni bir soğuk e-posta sistemi kurdum.",
+        ],
+        tags: ["EOS", "ClickUp", "Veri kazıma", "Instantly.ai", "Liderlik"],
+      },
+      {
+        period: "Mar 2024 — Oca 2025",
+        role: "Yazılım Geliştirme ve Destek Uzmanı",
+        company: "RTA Marketing Inc.",
+        location: "Uzaktan",
+        points: [
+          "Potansiyel müşteri yönetimi ve pazarlama otomasyonu için GoHighLevel, Mailgun, Twilio, Make ve Google ürünleriyle uçtan uca çözümler geliştirdim.",
+          "Etkileşimi ve müşteri adayı besleme süreçlerini iyileştiren, manuel işi azaltan iş akışları ve otomasyonlar kurguladım.",
+          "Araçları müşterilerin ihtiyaçlarına göre uyarladım ve mevcut sistemlerle sorunsuz şekilde entegre ettim.",
+          "Sürekli destek ve eğitim verdim; benimsemeyi ve dönüşümü artırmak için müşteri toplantılarına katıldım.",
+        ],
+        tags: ["Mailgun", "Twilio", "Make", "API'ler", "Müşteri başarısı"],
+      },
+      {
+        period: "Eyl 2020 — Haz 2021",
+        role: "İngilizce Öğretmeni",
+        company: "Prof. Orhan Oğuz Anadolu Lisesi",
+        location: "Eskişehir",
+        points: [
+          "Modern dil edinimi yöntemlerine dayanan müfredat, ders planları ve etkinlikler hazırladım.",
+          "Duyuşsal filtre kuramını uygulayarak kaygı ve düşük özgüven gibi öğrenme engellerini azalttım.",
+          "Farklı öğrenme stillerine uygun etkileşimli dersler tasarladım, öğrenci gelişimini kıdemli öğretmenlerle birlikte değerlendirdim.",
+        ],
+        tags: ["Müfredat tasarımı", "İletişim", "Mentorluk"],
+      },
+    ],
+  },
+  work: {
+    eyebrow: "Seçili işler",
+    title: "Kendi başıma *ürettiklerim.*",
+    aside: "Her şeyin bende olduğu yan projeler: fikir, tasarım, kod ve yayın.",
+    live: "Yayında",
+    visit: "Siteyi ziyaret et",
+    homepageAlt: "ana sayfası",
+    open: "Aç",
+    projects: [
+      {
+        name: "Omni Zen",
+        kind: "Kişisel proje",
+        url: "https://omnizen.space",
+        image: "/projects/omnizen.jpg",
+        tagline: "Bilinçli yaşam için iki dilli bir sağlıklı yaşam platformu.",
+        description:
+          "Uyku, beslenme ve öz disiplin üzerine araştırmaya dayalı yazılar için sakin, okur odaklı bir yuva. İngilizce ve Türkçe sürümleriyle eksiksiz bir yayın olarak kurgulandı ve internetin sessiz bir köşesi gibi hissettirmesi için tasarlandı.",
+        features: [
+          "Yerelleştirilmiş adreslerle İngilizce ve Türkçe sürümler",
+          "Blog, haberler ve Zen Radyo podcast bölümleri",
+          "Site genelinde arama ve haftalık bülten kaydı",
+          "Otomatik oluşturulan sosyal medya paylaşım görselleri",
+          "Çerez onayı ve dile özel SEO meta verileri",
+        ],
+        stack: ["Next.js", "React", "Vercel", "i18n"],
+      },
+    ],
+  },
+  skills: {
+    eyebrow: "Araç kutusu",
+    title: "Kod, *ve* onu kazanca çeviren araçlar.",
+    aside:
+      "Yarı mühendis, yarı operatör; yapay zekâ her zaman işin içinde. Bir Next.js projesinde de, Twilio'yu bir CRM'e bağlarken de, bir Level 10 toplantısını yönetirken de kendimi evimde hissediyorum.",
+    featured: "Öne çıkan",
+    learning: "öğreniyorum",
+    learningTitle: "Şu anda öğreniyorum",
+    groups: [
+      {
+        group: "Yapay Zekâ ve İş Akışları",
+        featured: true,
+        note: "Yapay zekâyı bir güç çarpanı olarak kullanıyorum: web sitelerini onunla kurup yönetiyor, birden fazla yapay zekâ aracını birbirine bağlayarak bir fikri bitmiş bir sonuca dönüştüren iş akışları oluşturuyorum.",
+        items: [
+          "Yapay zekâ destekli geliştirme",
+          "Yapay zekâ ile site kurulumu",
+          "Yapay zekâ ile site yönetimi",
+          "Çok araçlı yapay zekâ iş akışları",
+          "Prompt mühendisliği",
+          "Yapay zekâ ile içerik üretimi",
+        ],
+      },
+      { group: "Diller", items: ["TypeScript", "JavaScript", "Python", "SQL", "HTML", "CSS"] },
+      { group: "Frontend", items: ["React", "Next.js", "Redux", "Tailwind CSS", "Bootstrap", "Responsive tasarım"] },
+      { group: "Backend ve Veri", items: ["Node.js", "Express", "RESTful API'ler", "MongoDB", "MySQL", "Redis"] },
+      {
+        group: "Otomasyon ve CRM",
+        items: ["GoHighLevel", "n8n", "Make", "Zapier", "Twilio", "Mailgun", "Instantly.ai", "WordPress", "Divi"],
+      },
+      {
+        group: "Araçlar ve Medya",
+        items: ["Git", "Docker", "Linux", "Postman", "VS Code", "Canva"],
+        learning: ["Premiere Pro"],
+      },
+      { group: "Çalışma biçimi", items: ["EOS", "ClickUp", "Slack", "Trello", "SOP'ler", "Liderlik"] },
+    ],
+  },
+  credentials: {
+    education: "Eğitim",
+    certificates: "Sertifikalar",
+    values: "Değerlerim",
+    degrees: [
+      {
+        degree: "Ön Lisans, Bilgisayar Programcılığı",
+        school: "Anadolu Üniversitesi",
+        period: "2021 — 2023",
+        note: "Nesne yönelimli programlama, uygulamalı algoritma tasarımı, veritabanları ve web geliştirme.",
+      },
+      {
+        degree: "Lisans, İngilizce Öğretmenliği",
+        school: "Anadolu Üniversitesi",
+        period: "2017 — 2021",
+        note: "Dilbilim, fonoloji ve sözdizimi üzerine uzmanlaştım.",
+      },
+    ],
+    certs: [
+      { name: "Learning Docker", issuer: "LinkedIn Learning", year: "2026", url: certificateLinks.docker },
+      { name: "Introduction to Back-End Development", issuer: "Meta · Coursera", year: "2024", url: certificateLinks.backend },
+      { name: "Introduction to Front-End Development", issuer: "Meta · Coursera", year: "2024", url: certificateLinks.frontend },
+      { name: "Programming with JavaScript", issuer: "Meta · Coursera", year: "2024", url: certificateLinks.javascript },
+      { name: "Version Control", issuer: "Meta · Coursera", year: "2024", url: certificateLinks.versionControl },
+      { name: "Diksiyon Kursu", issuer: "ESMEK Eskişehir", year: "2018" },
+    ],
+    valueItems: [
+      { name: "Dürüstlük", body: "Her etkileşimde dürüstlük ve şeffaflık. Asıl altyapı güvendir." },
+      { name: "Alçakgönüllülük", body: "Gelişime açık bir bakış ve odadaki herkesten öğrenmeye istekli olmak." },
+      { name: "Şefkat", body: "Her zorluğa, iş arkadaşlarım ve müşterilerim için empatiyle yaklaşmak." },
+    ],
+  },
+  contact: {
+    eyebrow: "İletişim",
+    title: "Gerçekten *işe yarayan* bir şey kuralım.",
+    body: "Ekibinizle savaşmayan bir CRM, saatler kazandıran bir otomasyon ya da özenle yapılmış bir web uygulaması mı lazım? Gelen kutum açık.",
+    hello: "Bana yazın",
+    copyEmail: "E-posta adresini kopyala",
+    resume: "Özgeçmiş (EN)",
+    clock: "Ankara, Türkiye'de saat {time}",
+  },
+  footer: { credit: "Ankara'da tasarlandı ve kodlandı.", backToTop: "Başa dön" },
+};
+
+export default tr;

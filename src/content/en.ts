@@ -1,0 +1,260 @@
+import { certificateLinks } from "@/data/profile";
+import type { Content } from "./types";
+
+const en: Content = {
+  meta: {
+    title: "Mehmet Gündaş · Platform Engineer",
+    description:
+      "Teacher turned engineer. Mehmet Gündaş builds CRM platforms, marketing automations and full-stack web apps from Ankara, Türkiye.",
+  },
+  nav: {
+    sections: { about: "About", experience: "Experience", work: "Work", skills: "Skills", contact: "Contact" },
+    backToTop: "Back to top",
+    menu: "Menu",
+    openMenu: "Open command menu",
+    switchLanguage: "Türkçe'ye geç",
+  },
+  command: {
+    placeholder: "Type a command or search…",
+    noResults: "No results for",
+    groups: { navigate: "Navigate", actions: "Actions", elsewhere: "Elsewhere", language: "Language" },
+    copyEmail: "Copy email address",
+    sendEmail: "Send an email",
+    openResume: "Open résumé",
+    switchTo: "Türkçe'ye geç",
+    copied: "Email copied to clipboard",
+    hints: "↑↓ navigate · ↵ select",
+  },
+  hero: {
+    role: "GHL Platform Engineer",
+    company: "Nevsah Institute",
+    currently: "Currently",
+    at: "at",
+    buildPrefix: "I build",
+    buildSuffix: "",
+    rotating: ["CRM platforms", "marketing automations", "full-stack web apps", "sales pipelines", "landing funnels"],
+    intro:
+      "Teacher turned engineer, based in Ankara. I help businesses sell, scale and stay sane with systems that quietly just work.",
+    talk: "Let's talk",
+    resume: "Résumé",
+    scroll: "Scroll",
+    portraitAlt: "Portrait of Mehmet Gündaş",
+    city: "Ankara",
+    badgeFrom: "Teacher",
+    badgeTo: "Engineer",
+  },
+  marquee: [
+    "GoHighLevel",
+    "Next.js",
+    "TypeScript",
+    "AI Workflows",
+    "Automation",
+    "Node.js",
+    "CRM Architecture",
+    "React",
+    "Twilio",
+    "MongoDB",
+    "Funnels",
+    "Docker",
+    "Make",
+    "n8n",
+  ],
+  about: {
+    eyebrow: "About",
+    title: "The long way *into* code.",
+    manifesto:
+      "I studied how languages work: phonology, syntax, the hidden structure behind every sentence. Then I found a language with a *stricter grammar.* Now I use both to build *systems people actually understand.*",
+    story: [
+      {
+        label: "Past",
+        title: "Modding games, teaching English",
+        body: "As a kid I tinkered with computers and built mods for the games I played. That's where the programming bug bit. Later I earned a degree in English Language Teaching, specialising in linguistics, and taught high school English in Eskişehir.",
+      },
+      {
+        label: "Present",
+        title: "Engineering growth platforms",
+        body: "I'm a GHL Platform Engineer, building and maintaining CRM solutions, payment integrations, funnels and marketing automations. My goal is zero friction between a lead showing up and a deal closing.",
+      },
+      {
+        label: "Future",
+        title: "Building software that matters",
+        body: "I want to keep growing as a developer, go deeper into full-stack engineering, contribute to open source, and create impactful software that makes a real difference in people's lives.",
+      },
+    ],
+    stats: [
+      { value: "2024", label: "Started shipping in tech" },
+      { value: "4", label: "Roles, from classroom to CRM" },
+      { value: "2", label: "Degrees from Anadolu University" },
+      { value: "6", label: "Certificates, incl. Meta & LinkedIn" },
+    ],
+  },
+  experience: {
+    eyebrow: "Experience",
+    title: "Where I've *shipped*.",
+    aside:
+      "From lesson plans to payment gateways. Every role taught me to make complex things feel simple for the people using them.",
+    at: "at",
+    jobs: [
+      {
+        period: "Oct 2025 — Now",
+        role: "GHL Platform Engineer",
+        company: "Nevsah Institute",
+        location: "Remote",
+        points: [
+          "Lead administration of the GoHighLevel environment: CRM configuration, affiliate platform management and payment gateway integration.",
+          "Design and deploy conversion-focused landing pages and sophisticated email marketing automations.",
+          "Optimise sales pipelines and provide on-call technical support so the sales team never hits downtime while closing.",
+          "Create social media graphics and imagery for campaigns and brand awareness.",
+        ],
+        tags: ["GoHighLevel", "CRM", "Payments", "Automation", "Funnels"],
+      },
+      {
+        period: "Jan 2025 — Oct 2025",
+        role: "Project Manager",
+        company: "RTA Marketing Inc. & In30 Media",
+        location: "Remote",
+        points: [
+          "Promoted to Project Manager. Rolled out EOS across the organisation to improve alignment, accountability and efficiency.",
+          "Built ClickUp dashboards, moderated Level 10 meetings, introduced an SOP system and managed workload distribution.",
+          "At In30 Media, wrote custom scraping scripts for lead generation and analysed the data to surface high-value prospects.",
+          "Set up a new cold-email system on Instantly.ai to improve outreach, deliverability and engagement.",
+        ],
+        tags: ["EOS", "ClickUp", "Scraping", "Instantly.ai", "Leadership"],
+      },
+      {
+        period: "Mar 2024 — Jan 2025",
+        role: "Software Development & Support Specialist",
+        company: "RTA Marketing Inc.",
+        location: "Remote",
+        points: [
+          "Built end-to-end solutions with GoHighLevel, Mailgun, Twilio, Make and Google products for lead management and marketing automation.",
+          "Customised workflows and automations that improved engagement and lead nurturing, and cut manual work.",
+          "Tailored tools to client-specific needs and integrated them smoothly with existing systems.",
+          "Provided ongoing support and training, and joined client meetings to drive adoption and conversion.",
+        ],
+        tags: ["Mailgun", "Twilio", "Make", "APIs", "Client success"],
+      },
+      {
+        period: "Sep 2020 — Jun 2021",
+        role: "English Teacher",
+        company: "Prof. Orhan Oğuz Anadolu High School",
+        location: "Eskişehir",
+        points: [
+          "Prepared curriculum, lesson plans and activities grounded in modern language-acquisition methods.",
+          "Applied affective filter theory to lower barriers to learning like anxiety and low self-confidence.",
+          "Built interactive lessons for varied learning styles, and worked with senior staff to evaluate progress.",
+        ],
+        tags: ["Curriculum design", "Communication", "Mentoring"],
+      },
+    ],
+  },
+  work: {
+    eyebrow: "Selected work",
+    title: "Things I've *made* on my own.",
+    aside: "Side projects where I own everything: the idea, the design, the code and the launch.",
+    live: "Live",
+    visit: "Visit site",
+    homepageAlt: "homepage",
+    open: "Open",
+    projects: [
+      {
+        name: "Omni Zen",
+        kind: "Personal project",
+        url: "https://omnizen.space",
+        image: "/projects/omnizen.jpg",
+        tagline: "A bilingual wellness platform for mindful living.",
+        description:
+          "A calm, reader-first home for research-backed writing on sleep, nutrition and self-mastery. Built as a complete publication with English and Turkish editions, and designed to feel like a quiet corner of the internet.",
+        features: [
+          "English & Turkish editions with localised routes",
+          "Blog, news and Zen Radyo podcast sections",
+          "Site-wide search and weekly newsletter sign-up",
+          "Auto-generated social share images",
+          "Cookie consent and SEO metadata per locale",
+        ],
+        stack: ["Next.js", "React", "Vercel", "i18n"],
+      },
+    ],
+  },
+  skills: {
+    eyebrow: "Toolkit",
+    title: "Code, *plus* the tools that make it pay off.",
+    aside:
+      "Half engineer, half operator, with AI in the loop. I'm as comfortable in a Next.js codebase as I am wiring Twilio into a CRM or running a Level 10 meeting.",
+    featured: "Featured",
+    learning: "learning",
+    learningTitle: "Currently learning",
+    groups: [
+      {
+        group: "AI & Workflows",
+        featured: true,
+        note: "I use AI as a force multiplier: building and maintaining websites with it, and chaining multiple AI tools together into workflows that turn an idea into a finished result.",
+        items: [
+          "AI-assisted development",
+          "Building sites with AI",
+          "Maintaining sites with AI",
+          "Multi-tool AI workflows",
+          "Prompt engineering",
+          "AI content pipelines",
+        ],
+      },
+      { group: "Languages", items: ["TypeScript", "JavaScript", "Python", "SQL", "HTML", "CSS"] },
+      { group: "Frontend", items: ["React", "Next.js", "Redux", "Tailwind CSS", "Bootstrap", "Responsive design"] },
+      { group: "Backend & Data", items: ["Node.js", "Express", "RESTful APIs", "MongoDB", "MySQL", "Redis"] },
+      {
+        group: "Automation & CRM",
+        items: ["GoHighLevel", "n8n", "Make", "Zapier", "Twilio", "Mailgun", "Instantly.ai", "WordPress", "Divi"],
+      },
+      {
+        group: "Tools & Media",
+        items: ["Git", "Docker", "Linux", "Postman", "VS Code", "Canva"],
+        learning: ["Premiere Pro"],
+      },
+      { group: "Ways of working", items: ["EOS", "ClickUp", "Slack", "Trello", "SOPs", "Leadership"] },
+    ],
+  },
+  credentials: {
+    education: "Education",
+    certificates: "Certificates",
+    values: "What I stand for",
+    degrees: [
+      {
+        degree: "Associate's Degree, Computer Programming",
+        school: "Anadolu University",
+        period: "2021 — 2023",
+        note: "OOP, applied algorithm design, databases and web development.",
+      },
+      {
+        degree: "Bachelor's Degree, English Language Teaching",
+        school: "Anadolu University",
+        period: "2017 — 2021",
+        note: "Specialised in linguistics, phonology and syntax.",
+      },
+    ],
+    certs: [
+      { name: "Learning Docker", issuer: "LinkedIn Learning", year: "2026", url: certificateLinks.docker },
+      { name: "Introduction to Back-End Development", issuer: "Meta · Coursera", year: "2024", url: certificateLinks.backend },
+      { name: "Introduction to Front-End Development", issuer: "Meta · Coursera", year: "2024", url: certificateLinks.frontend },
+      { name: "Programming with JavaScript", issuer: "Meta · Coursera", year: "2024", url: certificateLinks.javascript },
+      { name: "Version Control", issuer: "Meta · Coursera", year: "2024", url: certificateLinks.versionControl },
+      { name: "Diction Course", issuer: "ESMEK Eskişehir", year: "2018" },
+    ],
+    valueItems: [
+      { name: "Integrity", body: "Honesty and transparency in every interaction. Trust is the real infrastructure." },
+      { name: "Humility", body: "A growth mindset and a willingness to learn from anyone in the room." },
+      { name: "Compassion", body: "Every challenge approached with empathy, for colleagues and clients alike." },
+    ],
+  },
+  contact: {
+    eyebrow: "Contact",
+    title: "Let's build something that *works.*",
+    body: "Need a CRM that doesn't fight your team, an automation that saves hours, or a web app built with care? My inbox is open.",
+    hello: "Say hello",
+    copyEmail: "Copy email address",
+    resume: "Résumé",
+    clock: "{time} in Ankara, Türkiye",
+  },
+  footer: { credit: "Designed & built in Ankara.", backToTop: "Back to top" },
+};
+
+export default en;

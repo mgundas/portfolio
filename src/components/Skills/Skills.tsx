@@ -1,29 +1,26 @@
-import { skills } from "@/data/profile";
+import type { Content } from "@/content";
+import Emphasis from "../Emphasis";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 
-const Skills = () => (
+const Skills = ({ t }: { t: Content["skills"] }) => (
   <section id="skills" className="relative mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
     <SectionHeading
       index="04"
-      eyebrow="Toolkit"
-      title={
-        <>
-          Code, <em className="text-muted">plus</em> the tools that make it pay off.
-        </>
-      }
-      aside="Half engineer, half operator, with AI in the loop. I'm as comfortable in a Next.js codebase as I am wiring Twilio into a CRM or running a Level 10 meeting."
+      eyebrow={t.eyebrow}
+      title={<Emphasis text={t.title} className="text-muted" />}
+      aside={t.aside}
     />
 
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {skills.map((category, i) =>
+      {t.groups.map((category, i) =>
         category.featured ? (
           <Reveal key={category.group} className="sm:col-span-2 lg:col-span-3">
             <div className="spotlight relative grid gap-8 overflow-hidden rounded-3xl border border-amber/25 bg-gradient-to-br from-amber/[0.08] via-surface/40 to-surface/40 p-7 transition-colors hover:border-amber/40 md:p-9 lg:grid-cols-[1fr_1.3fr] lg:items-center">
               <div aria-hidden className="absolute -right-24 -top-24 size-72 rounded-full bg-amber/10 blur-3xl" />
               <div>
                 <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-amber">
-                  <span aria-hidden>✦</span> Featured
+                  <span aria-hidden>✦</span> {t.featured}
                 </p>
                 <h3 className="mt-4 font-serif text-4xl md:text-5xl">{category.group}</h3>
                 <p className="mt-4 max-w-md leading-relaxed text-muted">{category.note}</p>
@@ -59,11 +56,11 @@ const Skills = () => (
               {category.learning?.map((item) => (
                 <li
                   key={item}
-                  title="Currently learning"
+                  title={t.learningTitle}
                   className="flex cursor-default items-center gap-2 rounded-full border border-dashed border-white/15 px-3.5 py-1.5 text-sm text-muted"
                 >
                   {item}
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-dim">learning</span>
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-dim">{t.learning}</span>
                 </li>
               ))}
             </ul>

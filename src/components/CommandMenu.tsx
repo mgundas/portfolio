@@ -1,7 +1,9 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { profile, sections, socials } from "@/data/profile";
-import { ArrowUpRight, Copy, FileText, GitHub, Hash, LinkedIn, Mail, Search } from "./icons";
+import { profile, sectionIds, socials } from "@/data/profile";
+import { otherLocale, type Content, type Locale } from "@/content";
+import { ArrowUpRight, Copy, FileText, GitHub, Globe, Hash, LinkedIn, Mail, Search } from "./icons";
+import { switchLocale } from "./LanguageSwitch";
 
 export const OPEN_COMMAND_MENU = "command-menu:open";
 
@@ -15,7 +17,9 @@ type Command = {
   run: () => void;
 };
 
-const CommandMenu = () => {
+type Props = { locale: Locale; t: Content["command"]; sections: Content["nav"]["sections"] };
+
+const CommandMenu = ({ locale, t, sections }: Props) => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
@@ -31,60 +35,68 @@ const CommandMenu = () => {
 
   const commands = useMemo<Command[]>(
     () => [
-      ...sections.map((s) => ({
-        group: "Navigate",
-        label: s.label,
+      ...sectionIds.map((id) => ({
+        group: t.groups.navigate,
+        label: sections[id],
         icon: <Hash />,
-        run: () => document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth" }),
+        run: () => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }),
       })),
       {
-        group: "Actions",
-        label: "Copy email address",
+        group: t.groups.actions,
+        label: t.copyEmail,
         icon: <Copy />,
         hint: profile.email,
         run: () => {
           navigator.clipboard.writeText(profile.email).then(() => {
-            setToast("Email copied to clipboard");
+            setToast(t.copied);
             setTimeout(() => setToast(null), 2200);
           });
         },
       },
       {
-        group: "Actions",
-        label: "Send an email",
+        group: t.groups.actions,
+        label: t.sendEmail,
         icon: <Mail />,
         run: () => (window.location.href = socials.email),
       },
       {
-        group: "Actions",
-        label: "Open résumé",
+        group: t.groups.actions,
+        label: t.openResume,
         icon: <FileText />,
         hint: "PDF",
         run: () => window.open(profile.resume, "_blank"),
       },
       {
-        group: "Elsewhere",
+        group: t.groups.language,
+        label: t.switchTo,
+        icon: <Globe />,
+        hint: `${locale.toUpperCase()} → ${otherLocale(locale).toUpperCase()}`,
+        run: () => switchLocale(otherLocale(locale)),
+      },
+      {
+        group: t.groups.elsewhere,
         label: "GitHub",
         icon: <GitHub />,
         hint: "@mgundas",
         run: () => window.open(socials.github, "_blank"),
       },
       {
-        group: "Elsewhere",
+        group: t.groups.elsewhere,
         label: "LinkedIn",
         icon: <LinkedIn />,
         hint: "mehmet-gundas",
         run: () => window.open(socials.linkedin, "_blank"),
       },
     ],
-    [],
+    [locale, t, sections],
   );
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    // Locale-aware lowercasing so Turkish İ/I match i/ı correctly.
+    const q = query.trim().toLocaleLowerCase(locale);
     if (!q) return commands;
-    return commands.filter((c) => `${c.group} ${c.label} ${c.hint ?? ""}`.toLowerCase().includes(q));
-  }, [commands, query]);
+    return commands.filter((c) => `${c.group} ${c.label} ${c.hint ?? ""}`.toLocaleLowerCase(locale).includes(q));
+  }, [commands, query, locale]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -141,7 +153,7 @@ const CommandMenu = () => {
   return (
     <>
       {open && (
-        <div className="fixed inset-0 z-[90] flex items-start justify-center px-4 pt-[14vh]" role="dialog" aria-modal aria-label="Command menu">
+        <div className="fixed inset-0 z-[90] flex items-start justify-center px-4 pt-[14vh]" role="dialog" aria-modal aria-label={t.placeholder}>
           <div className="fade-up absolute inset-0 bg-black/60 backdrop-blur-sm [animation-duration:.25s]" onClick={close} />
           <div className="fade-up relative w-full max-w-lg overflow-hidden rounded-2xl border border-line bg-surface/95 shadow-2xl shadow-black/60 [animation-duration:.3s]">
             <div className="flex items-center gap-3 border-b border-line px-5">
@@ -154,13 +166,13 @@ const CommandMenu = () => {
                   setActive(0);
                 }}
                 onKeyDown={onInputKey}
-                placeholder="Type a command or search…"
+                placeholder={t.placeholder}
                 className="h-14 w-full bg-transparent text-[15px] outline-none placeholder:text-dim"
               />
               <kbd className="rounded-md border border-line px-1.5 py-0.5 font-mono text-[10px] text-muted">ESC</kbd>
             </div>
             <ul ref={listRef} className="max-h-[50vh] overflow-y-auto p-2">
-              {filtered.length === 0 && <li className="px-3 py-8 text-center text-sm text-muted">No results for “{query}”</li>}
+              {filtered.length === 0 && <li className="px-3 py-8 text-center text-sm text-muted">{t.noResults} “{query}”</li>}
               {filtered.map((cmd, i) => {
                 const header = cmd.group !== lastGroup ? cmd.group : null;
                 lastGroup = cmd.group;
@@ -187,7 +199,7 @@ const CommandMenu = () => {
               })}
             </ul>
             <div className="flex items-center justify-between border-t border-line px-5 py-2.5 font-mono text-[10px] text-dim">
-              <span>↑↓ navigate · ↵ select</span>
+              <span>{t.hints}</span>
               <span>{profile.initials} / cmd</span>
             </div>
           </div>

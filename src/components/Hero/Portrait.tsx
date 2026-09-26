@@ -2,10 +2,11 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { profile } from "@/data/profile";
+import type { Content } from "@/content";
 import LocalTime from "../LocalTime";
 
 /** Portrait card that tilts toward the cursor, with a moving glare and parallax badges. */
-const Portrait = () => {
+const Portrait = ({ t }: { t: Content["hero"] }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const onMove = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -34,7 +35,7 @@ const Portrait = () => {
         <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-surface shadow-2xl shadow-black/60">
           <Image
             src={profile.image}
-            alt={`Portrait of ${profile.name}`}
+            alt={t.portraitAlt}
             fill
             priority
             sizes="(min-width: 1024px) 28rem, 90vw"
@@ -47,20 +48,20 @@ const Portrait = () => {
           <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6">
             <div>
               <p className="font-serif text-2xl">{profile.name}</p>
-              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{profile.role}</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{t.role}</p>
             </div>
             <div className="text-right font-mono text-[11px] text-muted">
               <p className="text-fg">
                 <LocalTime />
               </p>
-              <p>{profile.city}</p>
+              <p>{t.city}</p>
             </div>
           </div>
         </div>
 
         {/* Parallax badges float above the card */}
         <div className="absolute left-3 top-6 sm:top-10 rounded-full border border-white/10 bg-ink/70 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] backdrop-blur-md [transform:translateZ(60px)] sm:-left-10">
-          <span className="text-muted">Teacher</span> <span className="text-amber">→</span> Engineer
+          <span className="text-muted">{t.badgeFrom}</span> <span className="text-amber">→</span> {t.badgeTo}
         </div>
         <div className="absolute right-3 top-1/2 rounded-full border border-white/10 bg-ink/70 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] backdrop-blur-md [transform:translateZ(90px)] sm:-right-8">
           <span className="text-sky">EN</span> <span className="text-dim">/</span> TR

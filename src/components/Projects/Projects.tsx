@@ -1,26 +1,23 @@
 import Image from "next/image";
-import { projects } from "@/data/profile";
+import type { Content } from "@/content";
+import Emphasis from "../Emphasis";
 import { ArrowUpRight } from "../icons";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 
-const Projects = () => (
+const Projects = ({ t }: { t: Content["work"] }) => (
   <section id="work" className="relative mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
     <div aria-hidden className="absolute left-1/2 top-1/3 -z-10 h-[40rem] w-full max-w-[40rem] -translate-x-1/2 rounded-full bg-amber/[0.05] blur-[140px]" />
 
     <SectionHeading
       index="03"
-      eyebrow="Selected work"
-      title={
-        <>
-          Things I&apos;ve <em className="text-gold">made</em> on my own.
-        </>
-      }
-      aside="Side projects where I own everything: the idea, the design, the code and the launch."
+      eyebrow={t.eyebrow}
+      title={<Emphasis text={t.title} className="text-gold" />}
+      aside={t.aside}
     />
 
     <div className="grid gap-6">
-      {projects.map((project) => {
+      {t.projects.map((project) => {
         const host = new URL(project.url).host;
         return (
           <Reveal key={project.name}>
@@ -29,7 +26,7 @@ const Projects = () => (
                 <div>
                   <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-muted">
                     <span className="flex items-center gap-2 text-green-400">
-                      <span className="size-1.5 rounded-full bg-green-400" /> Live
+                      <span className="size-1.5 rounded-full bg-green-400" /> {t.live}
                     </span>
                     <span className="h-px w-6 bg-line" />
                     {project.kind}
@@ -61,14 +58,14 @@ const Projects = () => (
                     target="_blank"
                     className="group/link inline-flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-ink transition-all hover:gap-3 hover:bg-[#ffc57a]"
                   >
-                    Visit site
+                    {t.visit}
                     <ArrowUpRight className="transition-transform group-hover/link:rotate-45" />
                   </a>
                 </div>
               </div>
 
               {/* Browser-framed screenshot */}
-              <a href={project.url} target="_blank" aria-label={`Open ${project.name}`} className="relative block self-center p-4 pt-0 md:p-8 lg:pl-0 lg:pt-8">
+              <a href={project.url} target="_blank" aria-label={`${t.open} ${project.name}`} className="relative block self-center p-4 pt-0 md:p-8 lg:pl-0 lg:pt-8">
                 <div className="overflow-hidden rounded-2xl border border-white/10 bg-raised shadow-2xl shadow-black/50 transition-transform duration-700 group-hover:-translate-y-1 group-hover:rotate-[-0.6deg]">
                   <div className="flex items-center gap-3 border-b border-white/[0.06] px-4 py-3">
                     <span className="flex gap-1.5">
@@ -82,7 +79,7 @@ const Projects = () => (
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={project.image}
-                      alt={`${project.name} homepage`}
+                      alt={`${project.name} ${t.homepageAlt}`}
                       fill
                       sizes="(min-width: 1024px) 40rem, 95vw"
                       className="object-cover object-top transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"

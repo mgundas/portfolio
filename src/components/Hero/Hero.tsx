@@ -1,4 +1,5 @@
 import { profile } from "@/data/profile";
+import type { Content } from "@/content";
 import { ArrowDown, ArrowUpRight } from "../icons";
 import Portrait from "./Portrait";
 import RotatingWord from "./RotatingWord";
@@ -13,7 +14,7 @@ const SplitChars = ({ text, startDelay = 0 }: { text: string; startDelay?: numbe
   </span>
 );
 
-const Hero = () => (
+const Hero = ({ t }: { t: Content["hero"] }) => (
   <section id="top" className="relative flex min-h-svh items-center overflow-hidden pb-24 pt-32">
     {/* Backdrop: fading grid + warm and cool light */}
     <div aria-hidden className="bg-grid absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_60%_40%,black,transparent_70%)]" />
@@ -26,8 +27,10 @@ const Hero = () => (
           <span className="relative grid size-5 place-items-center">
             <span className="animate-pulse-dot size-2 rounded-full bg-green-400" />
           </span>
-          Currently <span className="text-fg">{profile.role}</span>
-          <span className="hidden sm:inline">at {profile.company}</span>
+          {t.currently} <span className="text-fg">{t.role}</span>
+          <span className="hidden sm:inline">
+            {t.at} {t.company}
+          </span>
         </p>
 
         <h1 className="font-serif text-[clamp(4.25rem,13vw,10.5rem)] leading-[0.86] tracking-[-0.02em]">
@@ -43,16 +46,16 @@ const Hero = () => (
         </h1>
 
         <p className="fade-up mt-10 font-serif text-3xl leading-tight md:text-4xl [animation-delay:.8s]">
-          I build <RotatingWord words={profile.rotating} />
+          {t.buildPrefix} <RotatingWord words={t.rotating} /> {t.buildSuffix}
         </p>
-        <p className="fade-up mt-4 max-w-lg text-lg leading-relaxed text-muted [animation-delay:.9s]">{profile.intro}</p>
+        <p className="fade-up mt-4 max-w-lg text-lg leading-relaxed text-muted [animation-delay:.9s]">{t.intro}</p>
 
         <div className="fade-up mt-10 flex flex-wrap items-center gap-3 [animation-delay:1s]">
           <a
             href="#contact"
             className="group inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3.5 font-medium text-ink transition-all hover:gap-3 hover:bg-[#ffc57a]"
           >
-            Let&apos;s talk
+            {t.talk}
             <ArrowUpRight className="transition-transform group-hover:rotate-45" />
           </a>
           <a
@@ -60,14 +63,14 @@ const Hero = () => (
             target="_blank"
             className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3.5 transition-colors hover:border-white/25 hover:bg-white/[0.03]"
           >
-            Résumé
+            {t.resume}
             <span className="font-mono text-xs text-dim">PDF</span>
           </a>
         </div>
       </div>
 
       <div className="fade-up [animation-delay:.4s] [animation-duration:1.4s]">
-        <Portrait />
+        <Portrait t={t} />
       </div>
     </div>
 
@@ -75,7 +78,7 @@ const Hero = () => (
       href="#about"
       className="fade-up absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-dim transition-colors hover:text-fg md:flex [animation-delay:1.4s]"
     >
-      Scroll
+      {t.scroll}
       <ArrowDown className="animate-bounce" />
     </a>
   </section>

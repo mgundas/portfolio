@@ -1,22 +1,19 @@
-import { experience } from "@/data/profile";
+import type { Content } from "@/content";
+import Emphasis from "../Emphasis";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 
-const Experience = () => (
+const Experience = ({ t }: { t: Content["experience"] }) => (
   <section id="experience" className="relative mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
     <SectionHeading
       index="02"
-      eyebrow="Experience"
-      title={
-        <>
-          Where I&apos;ve <em className="text-gold">shipped</em>.
-        </>
-      }
-      aside="From lesson plans to payment gateways. Every role taught me to make complex things feel simple for the people using them."
+      eyebrow={t.eyebrow}
+      title={<Emphasis text={t.title} className="text-gold" />}
+      aside={t.aside}
     />
 
     <ol className="border-t border-line">
-      {experience.map((job, i) => (
+      {t.jobs.map((job, i) => (
         <Reveal as="li" key={job.role + job.company} delay={i * 60}>
           <article className="spotlight group grid gap-6 border-b border-line px-2 py-10 transition-colors md:grid-cols-[220px_1fr] md:gap-10 md:px-6 md:py-12">
             <div className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
@@ -27,7 +24,7 @@ const Experience = () => (
             <div>
               <h3 className="font-serif text-3xl leading-tight md:text-4xl">
                 {job.role}
-                <span className="text-muted"> at </span>
+                <span className="text-muted"> {t.at} </span>
                 <span className="italic text-muted transition-colors group-hover:text-fg">{job.company}</span>
               </h3>
 

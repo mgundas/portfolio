@@ -1,4 +1,4 @@
-import { certificates, education, values } from "@/data/profile";
+import type { Content } from "@/content";
 import { ArrowUpRight } from "../icons";
 import Reveal from "../Reveal";
 
@@ -6,13 +6,13 @@ const Label = ({ children }: { children: React.ReactNode }) => (
   <p className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-muted">{children}</p>
 );
 
-const Credentials = () => (
+const Credentials = ({ t }: { t: Content["credentials"] }) => (
   <section className="relative mx-auto max-w-7xl px-5 pb-24 md:px-10 md:pb-32">
     <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
       <Reveal>
-        <Label>Education</Label>
+        <Label>{t.education}</Label>
         <ul className="grid gap-8">
-          {education.map((e) => (
+          {t.degrees.map((e) => (
             <li key={e.degree} className="border-l border-line pl-6">
               <p className="font-mono text-xs text-dim">{e.period}</p>
               <h3 className="mt-2 font-serif text-2xl md:text-3xl">{e.degree}</h3>
@@ -24,9 +24,9 @@ const Credentials = () => (
       </Reveal>
 
       <Reveal delay={120}>
-        <Label>Certificates</Label>
+        <Label>{t.certificates}</Label>
         <ul className="border-t border-line">
-          {certificates.map((c) => (
+          {t.certs.map((c) => (
             <li key={c.name} className="group flex items-baseline justify-between gap-4 border-b border-line py-4">
               {c.url ? (
                 <a
@@ -50,9 +50,9 @@ const Credentials = () => (
     </div>
 
     <Reveal className="mt-24">
-      <Label>What I stand for</Label>
+      <Label>{t.values}</Label>
       <div className="grid gap-4 md:grid-cols-3">
-        {values.map((v, i) => (
+        {t.valueItems.map((v, i) => (
           <div key={v.name} className="spotlight rounded-3xl border border-line bg-surface/40 p-7">
             <p className="font-mono text-xs text-dim">0{i + 1}</p>
             <h3 className="mt-6 font-serif text-4xl italic">{v.name}</h3>

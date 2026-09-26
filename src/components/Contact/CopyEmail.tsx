@@ -3,7 +3,7 @@ import { useState } from "react";
 import { profile } from "@/data/profile";
 import { Check, Copy } from "../icons";
 
-const CopyEmail = () => {
+const CopyEmail = ({ label }: { label: string }) => {
   const [copied, setCopied] = useState(false);
 
   const copy = async () => {
@@ -16,7 +16,7 @@ const CopyEmail = () => {
     <button
       onClick={copy}
       className="group inline-flex cursor-pointer items-center gap-3 rounded-full border border-line bg-surface/60 py-2 pl-5 pr-2 font-mono text-sm transition-colors hover:border-white/20 sm:text-base"
-      aria-label="Copy email address"
+      aria-label={label}
     >
       {profile.email}
       <span

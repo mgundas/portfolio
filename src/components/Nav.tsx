@@ -1,10 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import { profile, sections } from "@/data/profile";
+import { profile, sectionIds } from "@/data/profile";
+import type { Content, Locale } from "@/content";
 import { openCommandMenu } from "./CommandMenu";
 import { Menu } from "./icons";
+import LanguageSwitch from "./LanguageSwitch";
 
-const Nav = () => {
+const Nav = ({ locale, t }: { locale: Locale; t: Content["nav"] }) => {
   const [active, setActive] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [modKey, setModKey] = useState("Ctrl");
@@ -24,8 +26,8 @@ const Nav = () => {
       },
       { rootMargin: "-45% 0px -50% 0px" },
     );
-    sections.forEach((s) => {
-      const el = document.getElementById(s.id);
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
     return () => {
@@ -43,37 +45,40 @@ const Nav = () => {
       >
         <a
           href="#top"
-          aria-label="Back to top"
-          className="grid size-10 place-items-center rounded-full bg-fg font-serif text-lg italic text-ink transition-transform hover:rotate-[-8deg]"
+          aria-label={t.backToTop}
+          className="grid size-10 shrink-0 place-items-center rounded-full bg-fg font-serif text-lg italic text-ink transition-transform hover:rotate-[-8deg]"
         >
           {profile.initials}
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
-          {sections.map((s) => (
-            <li key={s.id}>
+          {sectionIds.map((id) => (
+            <li key={id}>
               <a
-                href={`#${s.id}`}
-                className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
-                  active === s.id ? "text-fg" : "text-muted hover:text-fg"
+                href={`#${id}`}
+                className={`relative rounded-full px-3.5 py-2 text-sm transition-colors ${
+                  active === id ? "text-fg" : "text-muted hover:text-fg"
                 }`}
               >
-                {active === s.id && <span className="absolute inset-0 -z-10 rounded-full bg-white/[0.07]" />}
-                {s.label}
+                {active === id && <span className="absolute inset-0 -z-10 rounded-full bg-white/[0.07]" />}
+                {t.sections[id]}
               </a>
             </li>
           ))}
         </ul>
 
-        <button
-          onClick={openCommandMenu}
-          className="flex h-10 cursor-pointer items-center gap-2 rounded-full border border-line bg-surface/60 px-4 text-sm text-muted transition-colors hover:border-white/20 hover:text-fg"
-          aria-label="Open command menu"
-        >
-          <Menu className="md:hidden" />
-          <span className="md:hidden">Menu</span>
-          <kbd className="hidden font-mono text-xs md:inline">{modKey} K</kbd>
-        </button>
+        <div className="flex items-center gap-2">
+          <LanguageSwitch locale={locale} label={t.switchLanguage} />
+          <button
+            onClick={openCommandMenu}
+            className="flex h-10 cursor-pointer items-center gap-2 rounded-full border border-line bg-surface/60 px-4 text-sm text-muted transition-colors hover:border-white/20 hover:text-fg"
+            aria-label={t.openMenu}
+          >
+            <Menu className="md:hidden" />
+            <span className="md:hidden">{t.menu}</span>
+            <kbd className="hidden font-mono text-xs md:inline">{modKey} K</kbd>
+          </button>
+        </div>
       </nav>
     </header>
   );
