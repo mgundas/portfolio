@@ -164,6 +164,25 @@ const tr: Content = {
     open: "Aç",
     projects: [
       {
+        name: "Kökten",
+        kind: "Kişisel proje",
+        url: "https://kokten.vercel.app",
+        image: "/projects/kokten.jpg",
+        tagline: "Bir cümlenin nasıl kurulduğunu görün, İngilizce ve Türkçe.",
+        description:
+          "Doğrudan dilbilim eğitimimden doğan, animasyonlu bir cümle anatomisi görselleştiricisi. Herhangi bir cümle yazın ve sözdizim ağacının büyümesini izleyin ya da bir Türkçe kelimeyi eklerine ayırıp tek bir kelimenin nasıl bir düzine İngilizce kelimeye karşılık geldiğini görün.",
+        features: [
+          "Açıklamalı ek dizileri ve ünlü uyumu notlarıyla özel Türkçe biçimbilim motoru",
+          "İngilizce ve Türkçe cümleler için animasyonlu D3 sözdizim ağaçları",
+          "Her biçimbirimi karşılığı olan İngilizce kelimelere bağlayan Türkçe ↔ İngilizce görünüm",
+          "Tekrar oynatma, adım adım ilerleme ve hız kontrolleriyle animasyon",
+          "Otomatik dil algılama",
+          "Paylaşılabilir bağlantılar ve SVG dışa aktarma",
+        ],
+        stack: ["Next.js", "TypeScript", "D3", "Compromise", "Tailwind CSS"],
+        links: [{ label: "GitHub'da kaynak kodu", url: "https://github.com/mgundas/kokten" }],
+      },
+      {
         name: "Omni Zen",
         kind: "Kişisel proje",
         url: "https://omnizen.space",

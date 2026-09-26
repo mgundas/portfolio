@@ -158,6 +158,25 @@ const en: Content = {
     open: "Open",
     projects: [
       {
+        name: "Kökten",
+        kind: "Personal project",
+        url: "https://kokten.vercel.app",
+        image: "/projects/kokten.jpg",
+        tagline: "See how a sentence is built, in English and Turkish.",
+        description:
+          "An animated sentence-anatomy visualizer, born straight out of my linguistics degree. Type any sentence and watch its syntax tree grow, or split a Turkish word into its suffix stack and see how one word maps onto a dozen English ones.",
+        features: [
+          "Custom Turkish morphology engine with glossed suffix stacks and vowel-harmony notes",
+          "Animated D3 syntax trees for English and Turkish sentences",
+          "Turkish ↔ English view linking each morpheme to the English words it becomes",
+          "Step-by-step playback with replay, step and speed controls",
+          "Automatic language detection",
+          "Shareable links and SVG export",
+        ],
+        stack: ["Next.js", "TypeScript", "D3", "Compromise", "Tailwind CSS"],
+        links: [{ label: "Source on GitHub", url: "https://github.com/mgundas/kokten" }],
+      },
+      {
         name: "Omni Zen",
         kind: "Personal project",
         url: "https://omnizen.space",
