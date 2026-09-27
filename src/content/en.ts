@@ -194,6 +194,25 @@ const en: Content = {
         ],
         stack: ["Next.js", "React", "OAuth 2.0", "REST API", "n8n", "Vercel"],
       },
+      {
+        name: "Audio Trimmer",
+        kind: "Open-source project",
+        url: "https://mp3-web-worker.vercel.app",
+        image: "/projects/audio-trimmer.jpg",
+        tagline: "Trim, fade and export audio without it ever leaving your browser.",
+        description:
+          "A fast, private audio editor with no backend at all. Drop in a file, drag a selection on the waveform, shape it with fades, gain and normalization, then export WAV or MP3. Preview and export run through the same processing function, so what you hear is exactly what you get.",
+        features: [
+          "100% client-side processing with the Web Audio API; files never leave the device",
+          "MP3 encoding in a Web Worker with a live progress bar, so the UI never freezes",
+          "Hand-written 16-bit PCM WAV encoder that keeps the original sample rate and channels",
+          "Draggable waveform selection synced both ways with precise mm:ss.ms inputs",
+          "Fades, gain and peak normalization, previewed exactly as exported",
+          "Undo/redo history, keyboard shortcuts and Vitest unit tests",
+        ],
+        stack: ["React", "TypeScript", "Vite", "Web Audio API", "Web Workers", "wavesurfer.js", "Zustand"],
+        links: [{ label: "Source on GitHub", url: "https://github.com/mgundas/mp3-web-worker" }],
+      },
     ],
   },
   skills: {

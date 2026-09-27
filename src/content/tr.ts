@@ -200,6 +200,25 @@ const tr: Content = {
         ],
         stack: ["Next.js", "React", "OAuth 2.0", "REST API", "n8n", "Vercel"],
       },
+      {
+        name: "Audio Trimmer",
+        kind: "Açık kaynak proje",
+        url: "https://mp3-web-worker.vercel.app",
+        image: "/projects/audio-trimmer.jpg",
+        tagline: "Sesi tarayıcınızdan hiç çıkarmadan kırpın, yumuşatın ve dışa aktarın.",
+        description:
+          "Hiç sunucusu olmayan, hızlı ve gizlilik dostu bir ses editörü. Bir dosya bırakın, dalga formu üzerinde bir bölüm seçin, fade, kazanç ve normalizasyonla şekillendirin, ardından WAV veya MP3 olarak dışa aktarın. Önizleme ve dışa aktarma aynı işleme fonksiyonundan geçiyor; yani ne duyarsanız onu alırsınız.",
+        features: [
+          "Web Audio API ile %100 tarayıcıda işleme; dosyalar cihazdan hiç çıkmaz",
+          "Canlı ilerleme çubuğuyla Web Worker içinde MP3 kodlama; arayüz asla donmaz",
+          "Orijinal örnekleme hızını ve kanalları koruyan, sıfırdan yazılmış 16-bit PCM WAV kodlayıcı",
+          "Hassas mm:ss.ms alanlarıyla çift yönlü senkronize, sürüklenebilir dalga formu seçimi",
+          "Dışa aktarılan sonuçla birebir aynı önizlenen fade, kazanç ve tepe normalizasyonu",
+          "Geri al/yinele geçmişi, klavye kısayolları ve Vitest birim testleri",
+        ],
+        stack: ["React", "TypeScript", "Vite", "Web Audio API", "Web Workers", "wavesurfer.js", "Zustand"],
+        links: [{ label: "GitHub'da kaynak kodu", url: "https://github.com/mgundas/mp3-web-worker" }],
+      },
     ],
   },
   skills: {
