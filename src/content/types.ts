@@ -61,13 +61,16 @@ export type Content = {
     title: string;
     aside: string;
     live: string;
+    runsLocally: string;
     visit: string;
     homepageAlt: string;
     open: string;
     projects: {
       name: string;
       kind: string;
-      url: string;
+      /** Public deployment. Omit for local-only apps, which then need `links` and `localHost`. */
+      url?: string;
+      localHost?: string;
       image: string;
       tagline: string;
       description: string;

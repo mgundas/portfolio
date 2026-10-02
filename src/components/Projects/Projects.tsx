@@ -20,16 +20,26 @@ const Projects = ({ t }: { t: Content["work"] }) => (
       {t.projects.map((project, i) => {
         // Alternate the screenshot side on desktop for rhythm.
         const flip = i % 2 === 1;
-        const host = new URL(project.url).host;
+        // Projects without a public deployment (local apps) lead with their first link instead.
+        const isLive = Boolean(project.url);
+        const primary = isLive ? { label: t.visit, url: project.url! } : project.links![0];
+        const secondary = isLive ? project.links ?? [] : project.links!.slice(1);
+        const host = isLive ? new URL(project.url!).host : project.localHost;
         return (
           <Reveal key={project.name}>
             <article className={`spotlight group grid overflow-hidden rounded-[2rem] border border-line bg-surface/50 transition-colors hover:border-white/15 ${flip ? "lg:grid-cols-[1.1fr_0.9fr]" : "lg:grid-cols-[0.9fr_1.1fr]"}`}>
               <div className={`flex flex-col justify-between gap-10 p-7 md:p-10 ${flip ? "lg:order-2" : ""}`}>
                 <div>
-                  <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-muted">
-                    <span className="flex items-center gap-2 text-green-400">
-                      <span className="size-1.5 rounded-full bg-green-400" /> {t.live}
-                    </span>
+                  <p className="flex flex-wrap items-center gap-x-3 gap-y-2 whitespace-nowrap font-mono text-xs uppercase tracking-[0.16em] text-muted">
+                    {isLive ? (
+                      <span className="flex items-center gap-2 text-green-400">
+                        <span className="size-1.5 rounded-full bg-green-400" /> {t.live}
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2 text-sky">
+                        <span className="size-1.5 rounded-full bg-sky" /> {t.runsLocally}
+                      </span>
+                    )}
                     <span className="h-px w-6 bg-line" />
                     {project.kind}
                   </p>
@@ -57,14 +67,14 @@ const Projects = ({ t }: { t: Content["work"] }) => (
                   </ul>
                   <div className="flex flex-wrap items-center gap-3">
                     <a
-                      href={project.url}
+                      href={primary.url}
                       target="_blank"
                       className="group/link inline-flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-ink transition-all hover:gap-3 hover:bg-[#ffc57a]"
                     >
-                      {t.visit}
+                      {primary.label}
                       <ArrowUpRight className="transition-transform group-hover/link:rotate-45" />
                     </a>
-                    {project.links?.map((link) => (
+                    {secondary.map((link) => (
                       <a
                         key={link.url}
                         href={link.url}
@@ -80,7 +90,7 @@ const Projects = ({ t }: { t: Content["work"] }) => (
               </div>
 
               {/* Browser-framed screenshot */}
-              <a href={project.url} target="_blank" aria-label={`${t.open} ${project.name}`} className={`relative block self-center p-4 pt-0 md:p-8 lg:pt-8 ${flip ? "lg:pr-0" : "lg:pl-0"}`}>
+              <a href={primary.url} target="_blank" aria-label={`${t.open} ${project.name}`} className={`relative block self-center p-4 pt-0 md:p-8 lg:pt-8 ${flip ? "lg:pr-0" : "lg:pl-0"}`}>
                 <div className="overflow-hidden rounded-2xl border border-white/10 bg-raised shadow-2xl shadow-black/50 transition-transform duration-700 group-hover:-translate-y-1 group-hover:rotate-[-0.6deg]">
                   <div className="flex items-center gap-3 border-b border-white/[0.06] px-4 py-3">
                     <span className="flex gap-1.5">

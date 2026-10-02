@@ -153,10 +153,30 @@ const en: Content = {
     title: "Things I've *made* on my own.",
     aside: "Side projects where I own everything: the idea, the design, the code and the launch.",
     live: "Live",
+    runsLocally: "Runs locally",
     visit: "Visit site",
     homepageAlt: "homepage",
     open: "Open",
     projects: [
+      {
+        name: "Deşifre",
+        kind: "Open-source project",
+        localHost: "127.0.0.1:7860",
+        image: "/projects/desifre.jpg",
+        tagline: "Private, GPU-powered transcription and subtitles that never leave your computer.",
+        description:
+          "A local transcription studio, built Turkish-first and supporting 100 languages. Drop in audio or video, let Whisper transcribe it on your own graphics card, separate the speakers, then polish the text and subtitles in an editor synced to playback and export to six formats. No cloud, no telemetry: your files stay on your machine.",
+        features: [
+          "Whisper transcription on the GPU with word-level alignment and speaker diarization (WhisperX + pyannote)",
+          "Playback-synced editor with word-by-word highlighting, split, merge and ±100 ms timing nudges",
+          "Subtitle view that builds cues by reading speed and flags ones that run too long or too fast",
+          "Job queue with live progress and ETA, cancel/retry, and automatic recovery after a restart",
+          "Exports to TXT, SRT, VTT, DOCX, JSON and CSV, with Turkish-aware search, sorting and file names",
+          "Tuned for 8 GB GPUs: ~7× real time with large-v3 on an RTX 4060 Ti, one model in memory at a time and automatic retry on out-of-memory",
+        ],
+        stack: ["Python", "FastAPI", "faster-whisper", "WhisperX", "pyannote", "PyTorch + CUDA", "SQLite", "Vanilla JS"],
+        links: [{ label: "Source on GitHub", url: "https://github.com/mgundas/desifre" }],
+      },
       {
         name: "Kökten",
         kind: "Personal project",

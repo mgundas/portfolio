@@ -159,10 +159,30 @@ const tr: Content = {
     title: "Kendi başıma *ürettiklerim.*",
     aside: "Her şeyin bende olduğu yan projeler: fikir, tasarım, kod ve yayın.",
     live: "Yayında",
+    runsLocally: "Yerelde çalışır",
     visit: "Siteyi ziyaret et",
     homepageAlt: "ana sayfası",
     open: "Aç",
     projects: [
+      {
+        name: "Deşifre",
+        kind: "Açık kaynak proje",
+        localHost: "127.0.0.1:7860",
+        image: "/projects/desifre.jpg",
+        tagline: "Bilgisayarınızdan hiç çıkmayan, ekran kartı gücüyle çalışan gizli yazıya dökme ve altyazı.",
+        description:
+          "Önce Türkçe için tasarlanmış, 100 dili destekleyen yerel bir yazıya dökme stüdyosu. Ses ya da video dosyası bırakın, Whisper kendi ekran kartınızda yazıya döksün, konuşmacıları ayırın, ardından metni ve altyazıyı oynatmayla eşzamanlı bir düzenleyicide son haline getirip altı farklı biçimde dışa aktarın. Bulut yok, telemetri yok: dosyalarınız bilgisayarınızda kalır.",
+        features: [
+          "Kelime düzeyinde hizalama ve konuşmacı ayrımıyla ekran kartında Whisper (WhisperX + pyannote)",
+          "Oynatmayla eşzamanlı düzenleyici: kelime kelime vurgulama, bölme, birleştirme ve ±100 ms zaman ayarı",
+          "Kesitleri okuma hızına göre oluşturan, fazla uzun ya da hızlı olanları işaretleyen altyazı görünümü",
+          "Canlı ilerleme ve kalan süre gösteren iş kuyruğu; iptal, yeniden deneme ve yeniden başlatmada otomatik kurtarma",
+          "TXT, SRT, VTT, DOCX, JSON ve CSV dışa aktarma; Türkçe harflere duyarlı arama, sıralama ve dosya adları",
+          "8 GB ekran kartları için ayarlı: RTX 4060 Ti'de large-v3 ile yaklaşık 7 kat gerçek zamanlı hız, bellekte aynı anda tek model ve bellek hatasında otomatik yeniden deneme",
+        ],
+        stack: ["Python", "FastAPI", "faster-whisper", "WhisperX", "pyannote", "PyTorch + CUDA", "SQLite", "Vanilla JS"],
+        links: [{ label: "GitHub'da kaynak kodu", url: "https://github.com/mgundas/desifre" }],
+      },
       {
         name: "Kökten",
         kind: "Kişisel proje",
